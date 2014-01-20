@@ -1,5 +1,5 @@
 //
-//  HISViewController.h
+//  SendMorseViewController.h
 //  Smorse
 //
 //  Created by Tim Hise on 1/20/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HISViewController : UIViewController
+@interface SendMorseViewController : UIViewController
 
 @end

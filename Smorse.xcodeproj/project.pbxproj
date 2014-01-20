@@ -14,13 +14,14 @@
 		0EA53131188DB1C1007C64F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA53130188DB1C1007C64F8 /* main.m */; };
 		0EA53135188DB1C1007C64F8 /* HISAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA53134188DB1C1007C64F8 /* HISAppDelegate.m */; };
 		0EA53138188DB1C1007C64F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA53136188DB1C1007C64F8 /* Main.storyboard */; };
-		0EA5313B188DB1C1007C64F8 /* HISViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA5313A188DB1C1007C64F8 /* HISViewController.m */; };
 		0EA5313D188DB1C1007C64F8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EA5313C188DB1C1007C64F8 /* Images.xcassets */; };
 		0EA53144188DB1C1007C64F8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA53143188DB1C1007C64F8 /* XCTest.framework */; };
 		0EA53145188DB1C1007C64F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA53124188DB1C1007C64F8 /* Foundation.framework */; };
 		0EA53146188DB1C1007C64F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA53128188DB1C1007C64F8 /* UIKit.framework */; };
 		0EA5314E188DB1C1007C64F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0EA5314C188DB1C1007C64F8 /* InfoPlist.strings */; };
 		0EA53150188DB1C1007C64F8 /* SmorseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA5314F188DB1C1007C64F8 /* SmorseTests.m */; };
+		0EA5315B188DB1DD007C64F8 /* NSString+MorseCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA5315A188DB1DC007C64F8 /* NSString+MorseCode.m */; };
+		0EA5315E188DCAC8007C64F8 /* SendMorseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA5315D188DCAC8007C64F8 /* SendMorseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +46,16 @@
 		0EA53133188DB1C1007C64F8 /* HISAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HISAppDelegate.h; sourceTree = "<group>"; };
 		0EA53134188DB1C1007C64F8 /* HISAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HISAppDelegate.m; sourceTree = "<group>"; };
 		0EA53137188DB1C1007C64F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0EA53139188DB1C1007C64F8 /* HISViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HISViewController.h; sourceTree = "<group>"; };
-		0EA5313A188DB1C1007C64F8 /* HISViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HISViewController.m; sourceTree = "<group>"; };
 		0EA5313C188DB1C1007C64F8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0EA53142188DB1C1007C64F8 /* SmorseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmorseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EA53143188DB1C1007C64F8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0EA5314B188DB1C1007C64F8 /* SmorseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmorseTests-Info.plist"; sourceTree = "<group>"; };
 		0EA5314D188DB1C1007C64F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0EA5314F188DB1C1007C64F8 /* SmorseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmorseTests.m; sourceTree = "<group>"; };
+		0EA53159188DB1DC007C64F8 /* NSString+MorseCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MorseCode.h"; sourceTree = "<group>"; };
+		0EA5315A188DB1DC007C64F8 /* NSString+MorseCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MorseCode.m"; sourceTree = "<group>"; };
+		0EA5315C188DCAC8007C64F8 /* SendMorseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendMorseViewController.h; path = ../SendMorseViewController.h; sourceTree = "<group>"; };
+		0EA5315D188DCAC8007C64F8 /* SendMorseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendMorseViewController.m; path = ../SendMorseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +115,13 @@
 		0EA5312A188DB1C1007C64F8 /* Smorse */ = {
 			isa = PBXGroup;
 			children = (
+				0EA53136188DB1C1007C64F8 /* Main.storyboard */,
+				0EA5315C188DCAC8007C64F8 /* SendMorseViewController.h */,
+				0EA5315D188DCAC8007C64F8 /* SendMorseViewController.m */,
+				0EA53159188DB1DC007C64F8 /* NSString+MorseCode.h */,
+				0EA5315A188DB1DC007C64F8 /* NSString+MorseCode.m */,
 				0EA53133188DB1C1007C64F8 /* HISAppDelegate.h */,
 				0EA53134188DB1C1007C64F8 /* HISAppDelegate.m */,
-				0EA53136188DB1C1007C64F8 /* Main.storyboard */,
-				0EA53139188DB1C1007C64F8 /* HISViewController.h */,
-				0EA5313A188DB1C1007C64F8 /* HISViewController.m */,
 				0EA5313C188DB1C1007C64F8 /* Images.xcassets */,
 				0EA5312B188DB1C1007C64F8 /* Supporting Files */,
 			);
@@ -252,7 +257,8 @@
 			files = (
 				0EA53131188DB1C1007C64F8 /* main.m in Sources */,
 				0EA53135188DB1C1007C64F8 /* HISAppDelegate.m in Sources */,
-				0EA5313B188DB1C1007C64F8 /* HISViewController.m in Sources */,
+				0EA5315B188DB1DD007C64F8 /* NSString+MorseCode.m in Sources */,
+				0EA5315E188DCAC8007C64F8 /* SendMorseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
