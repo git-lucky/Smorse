@@ -17,19 +17,39 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message to send" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tic-42-eKw">
-                                <rect key="frame" x="20" y="80" width="280" height="30"/>
+                                <rect key="frame" x="20" y="80" width="235" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="editingChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="IRh-9Q-dYg"/>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="N8S-Um-1r0"/>
                                 </connections>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Morse Output" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RJ2-6P-7Z9">
+                                <rect key="frame" x="40" y="138" width="240" height="350"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSs-hd-UFE">
+                                <rect key="frame" x="264" y="80" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="da9-rr-2fI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="messageField" destination="tic-42-eKw" id="hTM-yD-JTp"/>
+                        <outlet property="sendButton" destination="eSs-hd-UFE" id="HuT-6s-TBh"/>
+                        <outlet property="textViewOutlet" destination="RJ2-6P-7Z9" id="o5y-Rh-Q0h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

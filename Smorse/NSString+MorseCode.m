@@ -10,11 +10,11 @@
 
 @implementation NSString (MorseCode)
 
-+ (NSArray *)morseFromString:(NSString *)string
++ (NSArray *)morseArrayFromString:(NSString *)string
 {
     NSMutableArray *morseArray = [NSMutableArray new];
     
-    NSArray *oldArray = [string createArrayOfUppercaseNoSpaceChars];
+    NSArray *oldArray = [string createArrayToMorsify];
     for (int i = 0 ; i < [oldArray count] ; i++) {
         [morseArray addObject:[NSString replaceLetterWithMorse:oldArray[i]]];
     };
@@ -22,12 +22,12 @@
     return [NSArray arrayWithArray:morseArray];
 }
 
-- (NSArray *)createArrayOfUppercaseNoSpaceChars
+- (NSArray *)createArrayToMorsify
 {
     NSMutableArray *finalArray = [NSMutableArray new];
     
-    NSString *noSpace = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *upperCase = [self makeUppercase:noSpace];
+//    NSString *noSpace = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *upperCase = [self makeUppercase:self];
     NSArray *dictionaryKeysArray = [[NSString dictionaryWithMorseSymbols]allKeys];
 
     
@@ -58,7 +58,8 @@
 + (NSDictionary *)dictionaryWithMorseSymbols
 {
     NSDictionary *morseDictionary = [NSDictionary new];
-    morseDictionary = @{@"A": @".-",
+    morseDictionary = @{@" ": @" ",
+                        @"A": @".-",
                         @"B": @"-...",
                         @"C": @"-.-.",
                         @"D": @"-..",

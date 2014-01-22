@@ -12,6 +12,6 @@
 
 + (NSDictionary *)dictionaryWithMorseSymbols;
 
-+ (NSArray *)morseFromString:(NSString *)string;
++ (NSArray *)morseArrayFromString:(NSString *)string;
 
 @end

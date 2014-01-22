@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E17F366188F210000E61AF0 /* HISTorchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E17F365188F210000E61AF0 /* HISTorchController.m */; };
 		0EA53125188DB1C1007C64F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA53124188DB1C1007C64F8 /* Foundation.framework */; };
 		0EA53127188DB1C1007C64F8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA53126188DB1C1007C64F8 /* CoreGraphics.framework */; };
 		0EA53129188DB1C1007C64F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA53128188DB1C1007C64F8 /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E17F364188F210000E61AF0 /* HISTorchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HISTorchController.h; path = ../HISTorchController.h; sourceTree = "<group>"; };
+		0E17F365188F210000E61AF0 /* HISTorchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HISTorchController.m; path = ../HISTorchController.m; sourceTree = "<group>"; };
 		0EA53121188DB1C1007C64F8 /* Smorse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smorse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EA53124188DB1C1007C64F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0EA53126188DB1C1007C64F8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +121,8 @@
 				0EA53136188DB1C1007C64F8 /* Main.storyboard */,
 				0EA5315C188DCAC8007C64F8 /* SendMorseViewController.h */,
 				0EA5315D188DCAC8007C64F8 /* SendMorseViewController.m */,
+				0E17F364188F210000E61AF0 /* HISTorchController.h */,
+				0E17F365188F210000E61AF0 /* HISTorchController.m */,
 				0EA53159188DB1DC007C64F8 /* NSString+MorseCode.h */,
 				0EA5315A188DB1DC007C64F8 /* NSString+MorseCode.m */,
 				0EA53133188DB1C1007C64F8 /* HISAppDelegate.h */,
@@ -255,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E17F366188F210000E61AF0 /* HISTorchController.m in Sources */,
 				0EA53131188DB1C1007C64F8 /* main.m in Sources */,
 				0EA53135188DB1C1007C64F8 /* HISAppDelegate.m in Sources */,
 				0EA5315B188DB1DD007C64F8 /* NSString+MorseCode.m in Sources */,
@@ -467,6 +473,7 @@
 				0EA53155188DB1C1007C64F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0EA53156188DB1C1007C64F8 /* Build configuration list for PBXNativeTarget "SmorseTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +482,7 @@
 				0EA53158188DB1C1007C64F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
