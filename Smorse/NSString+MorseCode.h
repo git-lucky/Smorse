@@ -14,4 +14,6 @@
 
 + (NSArray *)morseArrayFromString:(NSString *)string;
 
++ (NSString *)createStringIdenticalToMorse:(NSString *)string;
+
 @end

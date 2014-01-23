@@ -19,22 +19,37 @@
 #pragma mark - Torch
 
 
-- (void)textToTorchFromArray:(NSArray *)tempArray
+- (void)textToTorchFromArray:(NSArray *)morseArray withStringEquivalent:(NSString *)string
 {
     self.operationQueue = [NSOperationQueue new];
     self.operationQueue.maxConcurrentOperationCount = 1;
-    for (int i = 0; i < [tempArray count]; i++) {
-        NSString *tempString = tempArray[i];
-        for (int s = 0; s < tempString.length; s++) {
-            if ([[tempString substringWithRange:NSMakeRange(s, 1)] isEqualToString:@"."]) {
-                [self shortFlash];
-            } else if ([[tempString substringWithRange:NSMakeRange(s, 1)] isEqualToString:@"-"]) {
-                [self longFlash];
-            } else {
-                [self waitBetweenWords];
+    
+    //Parse array of morse words, grabbing one letter (e.g. ..--) at a time
+    for (int i = 0; i < [morseArray count]; i++) {
+        
+        __block HISTorchController *weakSelf = self;
+        [self.operationQueue addOperationWithBlock:^{
+            
+            NSString *morseString = morseArray[i];
+            
+            //Gets the letter from the morse code for UI display
+            NSString *morseAlphaNumEquiv = [string substringWithRange:NSMakeRange(i, 1)];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [weakSelf.delegate morseBeingTorched:morseString];
+                [weakSelf.delegate letterBeingTorched:morseAlphaNumEquiv];
+//                [weakSelf.delegate incrementMessageLength:1];
+            }];
+            //takes each morse letter and seperates into individual . - or spaces
+            for (int s = 0; s < morseString.length; s++) {
+                if ([[morseString substringWithRange:NSMakeRange(s, 1)] isEqualToString:@"."]) {
+                    [weakSelf shortFlash];
+                } else if ([[morseString substringWithRange:NSMakeRange(s, 1)] isEqualToString:@"-"]) {
+                    [weakSelf longFlash];
+                } else {
+                    [weakSelf waitBetweenWords];
+                }
             }
-        }
-        NSLog(@"%@", tempString);
+        }];
     }
 }
 
@@ -62,25 +77,19 @@
 - (void)longFlash
 {
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    __block HISTorchController *weakSelf = self;
-    [self.operationQueue addOperationWithBlock:^{
-        [weakSelf torchOn:device];
-        usleep(600000);
-        [weakSelf torchOff:device];
-        usleep(200000);
-    }];
+    [self torchOn:device];
+    usleep(600000);
+    [self torchOff:device];
+    usleep(200000);
 }
 
 - (void)shortFlash
 {
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    __block HISTorchController *weakSelf = self;
-    [self.operationQueue addOperationWithBlock:^{
-        [weakSelf torchOn:device];
-        usleep(200000);
-        [weakSelf torchOff:device];
-        usleep(200000);
-    }];
+    [self torchOn:device];
+    usleep(200000);
+    [self torchOff:device];
+    usleep(200000);
 }
 
 - (void)waitBetweenWords

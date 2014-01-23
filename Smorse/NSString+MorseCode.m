@@ -14,7 +14,7 @@
 {
     NSMutableArray *morseArray = [NSMutableArray new];
     
-    NSArray *oldArray = [string createArrayToMorsify];
+    NSArray *oldArray = [string removeInvalidCharsFromUppercaseString];
     for (int i = 0 ; i < [oldArray count] ; i++) {
         [morseArray addObject:[NSString replaceLetterWithMorse:oldArray[i]]];
     };
@@ -22,13 +22,12 @@
     return [NSArray arrayWithArray:morseArray];
 }
 
-- (NSArray *)createArrayToMorsify
+- (NSArray *)removeInvalidCharsFromUppercaseString
 {
     NSMutableArray *finalArray = [NSMutableArray new];
     
-//    NSString *noSpace = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSString *upperCase = [self makeUppercase:self];
-    NSArray *dictionaryKeysArray = [[NSString dictionaryWithMorseSymbols]allKeys];
+    NSArray *dictionaryKeysArray = [[NSString dictionaryWithMorseSymbols] allKeys];
 
     
     for (int i = 0; i < upperCase.length; i++) {
@@ -39,6 +38,28 @@
         }
     }
     return [NSArray arrayWithArray:finalArray];
+}
+
++ (NSString *)createStringIdenticalToMorse:(NSString *)string
+{
+    NSString *upperCaseString = [NSString stringWithString:[string makeUppercase:string]];
+    NSArray *dictionaryKeysArray = [[NSString dictionaryWithMorseSymbols] allKeys];
+    
+    NSString *identToMorse = [NSString stringWithFormat:@""];
+    
+    
+    for (int i = 0; i < upperCaseString.length; i++) {
+        
+        NSString *tempLetter = [upperCaseString substringWithRange:NSMakeRange(i, 1)];
+        
+        if ([dictionaryKeysArray containsObject:tempLetter]) {
+            identToMorse = [identToMorse stringByAppendingString:tempLetter];
+        }
+    }
+    
+    NSLog(@"parsed string %@", identToMorse);
+    
+    return identToMorse;
 }
 
 - (NSString *)makeUppercase:(NSString *)string

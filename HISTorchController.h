@@ -9,10 +9,20 @@
 #import <Foundation/Foundation.h>
 @import AVFoundation;
 
+@protocol TorchControllerDelegate <NSObject>
+
+- (void)letterBeingTorched:(NSString *)letter;
+- (void)morseBeingTorched:(NSString *)morse;
+//- (void)totalMessageLength:(NSUInteger)num;
+//- (void)incrementMessageLength:(NSUInteger)num;
+
+@end
+
 @interface HISTorchController : NSObject
 
 - (void)torchOn:(AVCaptureDevice *)device;
-- (void)textToTorchFromArray:(NSArray *)tempArray;
+- (void)textToTorchFromArray:(NSArray *)morseArray withStringEquivalent:(NSString *)string;
 
+@property (unsafe_unretained) id <TorchControllerDelegate> delegate;
 
 @end
